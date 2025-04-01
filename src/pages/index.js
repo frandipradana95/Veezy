@@ -1,8 +1,16 @@
+import { Router } from "../router";
+import { Login, Register } from "./auth";
+
+const routes = {
+	"/": () => <Login />,
+	"/register": () => <Register />,
+};
+
 const App = () => {
 	return (
-		<div>
-			<h1>haloi</h1>
-		</div>
+		<fragment>
+			<Router routes={routes}></Router>
+		</fragment>
 	);
 };
 
