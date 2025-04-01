@@ -29,10 +29,11 @@ export const Router = ({ routes }) => {
 	return routes[currentPath] ? routes[currentPath]() : <h1>Page Not Found</h1>;
 };
 
-export const Link = ({ href, children }) => {
+export const Link = (props) => {
+	const { href, children } = props;
 	return (
 		<a
-			href={href}
+			{...props}
 			onClick={(e) => {
 				e.preventDefault();
 				window.history.pushState({}, "", href);
